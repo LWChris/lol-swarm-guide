@@ -1,0 +1,51 @@
+.champion.name, .champion.icon {
+    cursor: pointer;
+}
+.table tr.champion:not(.selected):has(.champion:hover) .champion {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.table[data-champion] td.signature {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.table[data-champion="jinx"] .weapon.signature:not(.jinx),
+.table[data-champion="seraphine"] .weapon.signature:not(.seraphine),
+.table[data-champion="leona"] .weapon.signature:not(.leona),
+.table[data-champion="illaoi"] .weapon.signature:not(.illaoi),
+.table[data-champion="briar"] .weapon.signature:not(.briar),
+.table[data-champion="yasuo"] .weapon.signature:not(.yasuo),
+.table[data-champion="riven"] .weapon.signature:not(.riven),
+.table[data-champion="aurora"] .weapon.signature:not(.aurora),
+.table[data-champion="xayah"] .weapon.signature:not(.xayah)
+{
+    display: none;
+}
+.table tr.selected {
+    background-color: rgba(125, 62, 205, 0.3);
+}
+.table[data-champion="jinx"] tr:has(.signature.jinx.scale:not(.evolve)) :is(.passive, .weapon.scale, .weapon.evolve),
+.table[data-champion="seraphine"] tr:has(.signature.seraphine.scale:not(.evolve)) :is(.passive, .weapon.scale, .weapon.evolve),
+.table[data-champion="leona"] tr:has(.signature.leona.scale:not(.evolve)) :is(.passive, .weapon.scale, .weapon.evolve),
+.table[data-champion="illaoi"] tr:has(.signature.illaoi.scale:not(.evolve)) :is(.passive, .weapon.scale, .weapon.evolve),
+.table[data-champion="briar"] tr:has(.signature.briar.scale:not(.evolve)) :is(.passive, .weapon.scale, .weapon.evolve),
+.table[data-champion="yasuo"] tr:has(.signature.yasuo.scale:not(.evolve)) :is(.passive, .weapon.scale, .weapon.evolve),
+.table[data-champion="riven"] tr:has(.signature.riven.scale:not(.evolve)) :is(.passive, .weapon.scale, .weapon.evolve),
+.table[data-champion="aurora"] tr:has(.signature.aurora.scale:not(.evolve)) :is(.passive, .weapon.scale, .weapon.evolve),
+.table[data-champion="xayah"] tr:has(.signature.xayah.scale:not(.evolve)) :is(.passive, .weapon.scale, .weapon.evolve)
+{
+    background-color: rgba(127, 146, 255, 0.3);
+}
+.table:has(tr.selected.passive.ability-haste) .header .weapon.ability-haste,
+.table:has(tr.selected.passive.projectile-count) .header .weapon.projectile-count,
+.table:has(tr.selected.passive.armor) .header .weapon.armor,
+.table:has(tr.selected.passive.duration) .header .weapon.duration,
+.table:has(tr.selected.passive.max-health) .header .weapon.max-health,
+.table:has(tr.selected.passive.crit-chance) .header .weapon.crit-chance,
+.table:has(tr.selected.passive.movement-speed) .header .weapon.movement-speed,
+.table:has(tr.selected.passive.exp) .header .weapon.exp,
+.table:has(tr.selected.passive.pickup-radius) .header .weapon.pickup-radius,
+.table:has(tr.selected.passive.damage) .header .weapon.damage,
+.table:has(tr.selected.passive.area-size) .header .weapon.area-size,
+.table:has(tr.selected.passive.health-regeneration) .header .weapon.health-regeneration
+{
+    background-color: rgba(125, 62, 205, 0.3);
+}

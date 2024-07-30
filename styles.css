@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+html {
+    background-color: #0d1f45;
+}
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0d1f45;
+    background-image: url('./assets/background.jpg');
+    background-blend-mode: luminosity;
+    background-size: cover;
+}
+#background div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(13, 31, 69, 0.9);
+}
+#app {
+    position: relative;
+}
+.table {
+    margin: auto;
+    vertical-align: center;
+    border-spacing: 0;
+}
+.table tr:not(.header) td {
+    height: 50px;
+    line-height: 0;
+}
+.table :not(.header) .champion {
+    padding: 0px 0.5em;
+    text-align: right;
+}
+.table .header .champion,
+.table .header .passive {
+    text-align: center;
+    vertical-align: bottom;
+    padding-bottom: 0.5em;
+}
+.table .header:nth-child(1) td {
+    padding: 0.5em 0;
+}
+.table .header .weapon
+{
+    vertical-align: bottom;
+    text-align: end;
+    writing-mode: vertical-lr;
+    line-height: 50px;
+}
+.table .header .weapon span
+{
+    display: inline-block;
+    rotate: 180deg;
+}
+.table tr.header td:nth-child(2n+3),
+.table tr td:nth-child(2n+5) {
+    background-color: rgb(255, 255, 255, 0.1);
+}
+.table .header + .header td {
+    border-bottom: 5px solid #0d1f45;
+}
+.table .header .passive,
+.table .passive.name {
+    padding-right: 0.5em;
+    border-right: 5px solid #0d1f45;
+}
+.table .weapon.signature + .weapon:not(.signature)
+{
+    border-left: 5px solid #0d1f45;
+}
+.table .icon img,
+.table .weapon.evolve img
+{
+    margin: 2px;
+    width: 46px;
+    height: 46px;
+}
+.table :not(.header) .weapon:not(.evolve) img
+{
+    margin: 12px;
+    width: 26px;
+    height: 26px;
+}
