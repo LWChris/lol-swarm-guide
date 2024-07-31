@@ -24,15 +24,11 @@ function _buildUi() {
     const weaponImageHeaderRow = document.createElement('tr');
     weaponImageHeaderRow.classList.add('header');
 
-    const championHeaderCell = document.createElement('td');
-    championHeaderCell.setAttribute('colspan', '2');
-    championHeaderCell.classList.add('champion');
+    const championHeaderCell = empty('champion');
     championHeaderCell.textContent = 'Champion';
     weaponImageHeaderRow.appendChild(championHeaderCell);
 
-    const passiveHeaderCell = document.createElement('td');
-    passiveHeaderCell.setAttribute('colspan', '2');
-    passiveHeaderCell.classList.add('passive');
+    const passiveHeaderCell = empty('passive');
     passiveHeaderCell.textContent = 'Passive';
     weaponImageHeaderRow.appendChild(passiveHeaderCell);
 
@@ -71,21 +67,17 @@ function _buildUi() {
 
     for (const passive of passives) {
         const passiveRow = document.createElement('tr');
-        passiveRow.classList.add('passive');
-        passiveRow.classList.add(passive.id);
+        passiveRow.classList.add('passive', passive.id);
 
         const championNameCell = document.createElement('td');
-        championNameCell.classList.add('champion');
-        championNameCell.classList.add('name');
+        championNameCell.classList.add('champion', 'name');
 
         const championIconCell = document.createElement('td');
-        championIconCell.classList.add('champion');
-        championIconCell.classList.add('icon');
+        championIconCell.classList.add('champion', 'icon');
 
         if (passive.championId) {
             passiveRow.setAttribute('data-champion', passive.championId);
-            passiveRow.classList.add('champion');
-            passiveRow.classList.add(passive.championId);
+            passiveRow.classList.add('champion', passive.championId);
 
             const champion = champions.find(c => c.id === passive.championId);
             championNameCell.textContent = champion.name;
@@ -101,8 +93,7 @@ function _buildUi() {
         passiveRow.appendChild(championIconCell);
 
         const passiveIconCell = document.createElement('td');
-        passiveIconCell.classList.add('passive');
-        passiveIconCell.classList.add('icon');
+        passiveIconCell.classList.add('passive', 'icon');
         const passiveImage = document.createElement('img');
         passiveImage.src = 'assets/passives/' + passive.id + '.png';
         passiveImage.alt = passive.name;
@@ -111,18 +102,15 @@ function _buildUi() {
         passiveRow.appendChild(passiveIconCell);
 
         const passiveNameCell = document.createElement('td');
-        passiveNameCell.classList.add('passive');
-        passiveNameCell.classList.add('name');
+        passiveNameCell.classList.add('passive', 'name');
         passiveNameCell.textContent = passive.name;
         passiveRow.appendChild(passiveNameCell);
     
         for (const weapon of weapons) {
             const weaponCell = document.createElement('td');
-            weaponCell.classList.add('weapon');
-            weaponCell.classList.add(weapon.id);
+            weaponCell.classList.add('weapon', weapon.id);
             if (weapon.signature !== false) {
-                weaponCell.classList.add('signature');
-                weaponCell.classList.add(weapon.signature);
+                weaponCell.classList.add('signature', weapon.signature);
             }
             const evolve = weapon.evolve === passive.id;
             const scale = weapon.scale.includes(passive.id);
