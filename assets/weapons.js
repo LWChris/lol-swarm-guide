@@ -90,7 +90,6 @@ const weapons = [
             "damage",
             "area-size",
             "crit-chance",
-            "duration",
             "movement-speed",
         ]
     },
