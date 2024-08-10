@@ -81,6 +81,7 @@ body {
 .table .passive.name {
     padding-right: 0.5em;
     border-right: 5px solid #0d1f45;
+    line-height: revert;
 }
 .table .weapon.signature + .weapon:not(.signature)
 {
